@@ -1,0 +1,22 @@
+Ejemplo anterior:
+[0-5]\d\d{3}6|(5[0-2])
+
+1º)
+nombre de usuario
+de 3 a 16 caracteres
+puede comenzar por caracteres alfabeticos (a-z) y _
+
+[0-2]?[0-5]?[0-5]\.{2}
+
+2º)
+Usa dirección IP (v4)
+
+^([0-9]+(\.|$)){4}
+
+Numero con decimales:
+5.6
+34.6
+.4
+0.4
+Proceso del ejercicio de arriba:
+(\d+)?\.\d+
