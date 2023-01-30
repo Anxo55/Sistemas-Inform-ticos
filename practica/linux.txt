@@ -1,0 +1,21 @@
+Todas las que comienxas por 'no' (da igual mayusculas y minusculas)
+grep -E '^no|^No'
+grep -E '^[nN]o'
+grep -E -i '^no'
+
+Todas las que comiencen por 'Y' y espacio 
+grep -E '^Y\s' cuervo.txt
+
+Que termine en . o en ,
+grep -E '\.$|,$' cuervo.txt
+grep- E '[\.,]$' cuervo.txt
+
+Que tenga una vocal (da igual mayuculas y minusculas)
+ y luego una l (minuscula)
+grep -E '[aeiouAEIOU]l' cuervo.txt
+
+Las que tengan varias palabras entre las palabras
+'la' y 'de'
+grep -E '' cuervo.txt
+
+
