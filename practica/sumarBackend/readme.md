@@ -8,7 +8,7 @@ npm install
 
 ## Ejeutar el proyecto
 ```
-node index2.js
+nodemon index2.js
 
 npm start
 ```
@@ -16,4 +16,9 @@ npm start
 # Acceder al backend
 ```
 http://localhost:3000
+```
+
+## Dependencia de nodemon
+```
+npm install -g nodemon
 ```
