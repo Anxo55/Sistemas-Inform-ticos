@@ -1,5 +1,6 @@
 package com.cebem.rickandmorty.utils;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -21,5 +22,10 @@ public class Utils {
 
         }
 
+    }
+
+    public static boolean deleteFromDisk(String fileName) {
+        File f = new File(fileName);
+        return f.delete();
     }
 }

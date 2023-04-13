@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <form action="http://localhost:8080/saveOnDisk" method="post">
-        Nombre: <input type="text">
-        <br/>
-        Precio: <input type="text">
-        <br/>
-        <button type="submit">Enviar al servidor</button>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" placeholder="nombre del producto">
+        <label for="price">Precio:</label>
+        <input type="text" name="price" id="price" placeholder="precio del producto">
+<button type="submit">Enviar al servidor</button>
     </form>
 </body>
 </html>

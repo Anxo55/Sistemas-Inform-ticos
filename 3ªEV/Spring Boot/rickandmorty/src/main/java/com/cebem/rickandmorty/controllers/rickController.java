@@ -1,11 +1,13 @@
 package com.cebem.rickandmorty.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.ProcessHandle.Info;
 import java.text.MessageFormat;
 import java.util.Map;
 
 import org.apache.logging.log4j.message.Message;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +33,7 @@ public class rickController {
         return Utils.isPalindrome(word) ? "Si es palíndromo" : "No es un palindromo";
     }
 
+
     @GetMapping("/add")
     public String add(@RequestParam String n1, @RequestParam String n2) {
         float resultado = Float.parseFloat(n1) + Float.parseFloat(n2);
@@ -55,5 +58,15 @@ public class rickController {
 
         return "Gracias por enviar el formulario, los datos se han guardado en el servidor";
     }
+
+    @GetMapping("/removeFromDisk")
+    public String removeFromDisk() {
+        boolean resultado = Utils.deleteFromDisk("datos.txt");
+        return resultado ? "Borrado correcto" : "No he podido borrar";
+    }
+
+
+    
+
 
 }
