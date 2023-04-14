@@ -7,6 +7,7 @@ import java.text.MessageFormat;
 import java.util.Map;
 
 import org.apache.logging.log4j.message.Message;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cebem.rickandmorty.utils.Utils;
 
 @RestController
+
 public class rickController {
     @GetMapping("/")
     public String saluda() {
@@ -59,14 +61,25 @@ public class rickController {
         return "Gracias por enviar el formulario, los datos se han guardado en el servidor";
     }
 
-    @GetMapping("/removeFromDisk")
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/removeFromDisk")
     public String removeFromDisk() {
         boolean resultado = Utils.deleteFromDisk("datos.txt");
         return resultado ? "Borrado correcto" : "No he podido borrar";
     }
 
 
-    
+//     -Se pide que crees un endpoint en tu
+// servidor que, pasandole un numero cualquiera 
+// te devuelva ese número elevado al cuadrado
+
+// -Se pide que crees un endpoint que al
+// llamarlo vacie(no borre) el fichero datos.txt
+// prueba el funcionamiento de este endpoint
+// con la extension ThunderClient de vs
+
+// -Crea un endpoint que te devuelva toda la
+// información guardada en el fichero datos.txt
 
 
 }

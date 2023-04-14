@@ -1,0 +1,11 @@
+-Se pide que crees un endpoint en tu
+servidor que, pasandole un numero cualquiera 
+te devuelva ese número elevado al cuadrado
+
+-Se pide que crees un endpoint que al
+llamarlo vacie(no borre) el fichero datos.txt
+prueba el funcionamiento de este endpoint
+con la extension ThunderClient de vs
+
+-Crea un endpoint que te devuelva toda la
+información guardada en el fichero datos.txt
