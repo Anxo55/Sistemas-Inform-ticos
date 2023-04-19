@@ -79,7 +79,7 @@ public class rickController {
 // servidor que, pasandole un numero cualquiera 
 // te devuelva ese número elevado al cuadrado
 
-//http://localhost:8080/cuadrado
+//http://localhost:8080/squaring
 @GetMapping("/squaring")
 public int squaring(@RequestParam int num) {
     return num*num;
@@ -146,6 +146,7 @@ public String mayor(@RequestParam String num1, @RequestParam String num2, @Reque
 //Este devolveá el mismo texto, perocon la primera letra
 //de cada palabra en mayusculas (el resto en minúscula)
 
+//GET http://localhost:8080/capitalizar/xxxx
 @GetMapping("/capitalizar")
     public String capitalizar(@RequestParam String frase) {
         String[] palabras = frase.split("\\s+");
@@ -165,6 +166,7 @@ public String mayor(@RequestParam String num1, @RequestParam String num2, @Reque
 //[negro, azul, marrón, gris, verde, naranja, rosa, púrpura,
 //rojo, blancoy amarillo]
 
+//GET http://localhost:8080/randomColor
 @GetMapping("/randomColor")
     public String[] randomColors() {
         String[] coloresBasicos = { "negro", "azul", "marrón", "gris", "verde", "naranja", "rosa", "púrpura", "rojo",
@@ -193,6 +195,14 @@ public String mayor(@RequestParam String num1, @RequestParam String num2, @Reque
         }
         return false;
     }
+
+    public static int getRandomValue(int max) {
+        return (int) Math.floor(Math.random() * max);
+    }
+
+    /**
+     * Crea un endpoint que te devuelva un personaje random de la serie rick and morty
+     */
 
 
 }
