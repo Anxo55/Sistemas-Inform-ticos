@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Random;
 
 import org.apache.logging.log4j.message.Message;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cebem.rickandmorty.Services.RickAndMortyService;
+import com.cebem.rickandmorty.models.CharacterModel;
 import com.cebem.rickandmorty.utils.Utils;
 
 import ch.qos.logback.classic.pattern.Util;
@@ -27,6 +30,9 @@ public class rickController {
     public String saluda() {
         return "Bienvenid@ a mi api rest de rickAndMorty";
     }
+
+    @Autowired
+    RickAndMortyService rickAndMortyService;
 
     @GetMapping("/random")
     public String random() {
@@ -166,7 +172,16 @@ public class rickController {
     }
 
     @GetMapping("/rickandmorty/random")
-    public static String randomCharacter(){
-        return "";
+    public String randomCharacter(){
+        //RickAndMortyService rickAndMortyService = new RickAndMortyService();
+        CharacterModel characterModel = rickAndMortyService.getCharacterRandom();
+
+    return characterModel.name +"<br/>" + "<img src='"+characterModel.image+"'/>";
     }
+
+    @GetMapping("/rickandmorty/all")
+    public String randomCharacters() {
+
+    }
+
 }
