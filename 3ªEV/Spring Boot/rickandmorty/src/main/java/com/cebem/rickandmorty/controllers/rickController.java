@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cebem.rickandmorty.Services.RickAndMortyService;
 import com.cebem.rickandmorty.models.CharacterModel;
+import com.cebem.rickandmorty.models.CharactersModel;
 import com.cebem.rickandmorty.utils.Utils;
 
 import ch.qos.logback.classic.pattern.Util;
+import ch.qos.logback.core.model.Model;
 
 @RestController
 public class rickController {
@@ -180,8 +182,21 @@ public class rickController {
     }
 
     @GetMapping("/rickandmorty/all")
-    public String randomCharacters() {
-
+    public String characters() {
+        CharactersModel charactersModel = rickAndMortyService.getAllCharacters();
+        String html = "<html>";
+        html+= "<head>";
+        html+="</head>";
+        html+="<body>";
+        for(CharacterModel characterModel : charactersModel.results) {
+            html += characterModel.name;
+            html += "<br/>";
+            html += "<img width = '200px' src=' "+characterModel.image+"'>";
+            html += "<hr/>";
+        }
+        html+="</body>";
+        html+="</html>";
+            return html;
     }
 
 }
