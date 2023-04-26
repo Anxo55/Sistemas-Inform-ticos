@@ -26,8 +26,18 @@ public class WebController {
         return "rickandmortyall";
     }
 
-    //Queremos mostra en una pagina web el total de personajes que tenemos
+    //Queremos mostrar en una pagina web el total de personajes que tenemos
     //Aparecerá la frase del TOTAL DE PERSONAJES : 867
     //Centrado en la pantalla y de color verde.
     //Usa un motor de pantallas (thymeleaf)
-}
+
+    @RequestMapping("/rickandmorty/count")
+    public String charactersCountTemplate(Model modelo) {
+      int count = rickAndMortyService.getCharactersCount();
+      modelo.addAttribute("count", count);
+      return "rickandmortyCount";
+    }
+  }
+
+
+
