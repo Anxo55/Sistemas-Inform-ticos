@@ -8,13 +8,12 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class RickandmortyApplication {
 
-	@Bean
-	public RestTemplate getresttemplate(){
-		return new RestTemplate();
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(RickandmortyApplication.class, args);
-	}
-
+  @Bean
+  public RestTemplate getresttemplate(){
+    return new RestTemplate();
+  }
+  
+  public static void main(String[] args) {
+    SpringApplication.run(RickandmortyApplication.class, args);
+  }
 }

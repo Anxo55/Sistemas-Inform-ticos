@@ -9,9 +9,8 @@
         .container{
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap:10px;
         }
-
         img{
             width: 100px;
         }
@@ -20,13 +19,13 @@
 <body>
     <h1>Lista de personajes de Rick and Morty</h1>
     <h3 th:text="${creator}"></h3>
-
-<div class="container">
-    <div th:each="character : ${characters}">
-        <h4 th:text="${character.name}"></h4>
-        <img th:src="${character.image}" alt="personaje">
+    <div class="container">
+          <div th:each="character : ${characters}">
+            <h4 th:text="${character.name}"></h4>
+             <img th:src="${character.image}" alt="personaje"/>
+        </div>
     </div>
-</div>
-
+  
+    
 </body>
 </html>

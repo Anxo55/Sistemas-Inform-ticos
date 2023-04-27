@@ -1,3 +1,4 @@
-Coca - 15 
-a - 1200 
-b - 1200 
+patatas 10
+fresas 1
+limones 3
+pan 3
