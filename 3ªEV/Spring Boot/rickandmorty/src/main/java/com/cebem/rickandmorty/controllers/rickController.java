@@ -1,8 +1,8 @@
 package com.cebem.rickandmorty.controllers;
 
+import com.cebem.rickandmorty.Services.RickAndMortyService2;
 import com.cebem.rickandmorty.models.CharacterModel;
 import com.cebem.rickandmorty.models.CharactersModel;
-import com.cebem.rickandmorty.services.RickAndMortyService2;
 import com.cebem.rickandmorty.utils.Utils;
 import java.io.FileNotFoundException;
 import java.io.IOException;
