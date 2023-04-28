@@ -23,6 +23,7 @@ public class MemeModel {
     String url;
     String description;
     String author;
+    
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     Date createDate;
