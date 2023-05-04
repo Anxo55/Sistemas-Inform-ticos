@@ -1,0 +1,5 @@
+Listar todos los memes
+Añadir un nuevo meme
+Borrar un meme
+Actualizar un meme en particular
+Ver un meme en particular
