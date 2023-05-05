@@ -1,6 +1,6 @@
 package com.cebem.rickandmorty.controllers;
 
-import com.cebem.rickandmorty.Services.RickAndMortyService2;
+import com.cebem.rickandmorty.Services.RickAndMortyService;
 import com.cebem.rickandmorty.models.CharacterModel;
 import com.cebem.rickandmorty.models.CharactersModel;
 import com.cebem.rickandmorty.utils.Utils;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class rickController {
 
   @Autowired
-  RickAndMortyService2 rickAndMortyService2;
+  RickAndMortyService rickAndMortyService2;
 
   // http://127.0.0.1/
   // http://localhost/

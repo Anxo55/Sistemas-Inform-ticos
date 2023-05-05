@@ -11,15 +11,15 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
-@Entity
-@Table(name="meme")
+
 public class MemeModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(unique = true, nullable=false)
-    long id;
+    private long id;
 
-    String category;
+    private String category;
+    
     @Column(length = 500)
     private String url;
     private String description;
@@ -27,7 +27,7 @@ public class MemeModel {
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createDate;
+    private Date createdAt;
 
     public long getId() {
         return id;
@@ -69,14 +69,14 @@ public class MemeModel {
         this.author = author;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
-
 
     
+
 }
