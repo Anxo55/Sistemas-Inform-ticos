@@ -1,0 +1,48 @@
+SHELL SCRIPT:
+
+1º
+	#!/bin/bash
+
+# Función para crear la carpeta "datos" y el archivo "examen.txt"
+crear_directorio() {
+  echo "Creando la carpeta datos..."
+  mkdir datos
+  echo "Guardando el número negativo en el archivo examen.txt..."
+  echo "scale=2; $1 / 2" | bc > datos/examen.txt
+  echo "La carpeta datos y el archivo examen.txt han sido creados."
+}
+
+# Función para eliminar la carpeta "datos" y su contenido
+borrar_directorio() {
+  echo "La carpeta datos ya existía y la he borrado."
+  rm -rf datos
+}
+
+# Bucle principal
+while true; do
+  read -p "Introduce un valor numérico (0 para salir): " valor
+
+  if ((valor < 0)); then
+    if [[ -d "datos" ]]; then
+      borrar_directorio
+    fi
+    crear_directorio $valor
+  elif ((valor == 0)); then
+    echo "FIN"
+    exit 0
+  else
+    for ((i = valor; i >= 1; i--)); do
+      echo $i
+    done
+  fi
+done
+
+2º
+
+Guarda el código en un archivo con extensión .sh, por ejemplo programa.sh, y luego puedes ejecutarlo en una terminal de Linux usando el siguiente comando:
+
+(bash programa.sh)
+
+El programa te pedirá que introduzcas un valor numérico. Si es negativo, creará la carpeta "datos" (si no existe) y el archivo "examen.txt" dentro de esa carpeta, con el valor numérico dividido por 2. Si la carpeta "datos" ya existe, la borrará antes de crearla de nuevo. Si introduces 0, el programa finalizará y mostrará "FIN". Si introduces un número positivo, mostrará en pantalla todos los valores descendentes desde ese número hasta 1.
+
+Recuerda que debes tener instalado el comando bc para realizar la división con decimales. Si no lo tienes instalado, puedes instalarlo ejecutando sudo apt-get install bc en la terminal.
