@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cebem.rickandmorty.Services.RickAndMortyService;
+import com.cebem.rickandmorty.Services.RickAndMortyService2;
 import com.cebem.rickandmorty.models.CharactersModel;
 
 @Controller
 public class WebController {
 
   @Autowired
-  RickAndMortyService rickAndMortyService2;
+  RickAndMortyService2 rickAndMortyService2;
 
   @RequestMapping("/rickandmorty/allTemplate")
   public String charactersTemplate(Model modelo) {

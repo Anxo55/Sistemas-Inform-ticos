@@ -14,6 +14,7 @@ public class MemeService {
     MemeRepository memeRepository;
 
     public ArrayList<MemeModel> getAllMemes(){
+        
         return (ArrayList<MemeModel>)memeRepository.findAll();
      }
 
@@ -21,11 +22,11 @@ public class MemeService {
         return memeRepository.save(meme);
     }
 
-    public boolean deleteMeme(long id) {
+    public boolean deleteMeme(long id){
         try{
-        memeRepository.deleteById(id);
+            memeRepository.deleteById(id);
             return true;
-        }catch(IllegalArgumentException ex) {
+        }catch(IllegalArgumentException ex){
             return false;
         }
     }

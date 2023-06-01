@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="head(titulo='listando')"></head>
+<head th:replace="~{head(titulo='Listando')}"></head>
 <body>
-    
+
     <header th:insert="~{navegacion}"></header>
-    <!-- <div th:replace="navegacion"></div> -->
 
     <h1>Lista de memes</h1>
     <section class="container">
@@ -12,18 +11,18 @@
                 <img th:src="${meme.url}" alt="meme"/>
                 <p th:text="${meme.description}"></p>
                 <!-- https://www.baeldung.com/thymeleaf-js-function-call -->
-                <button th:onclick="deleteMeme( {[meme.id]} )">❌</button>
+                <button th:onclick="deleteMeme(  [[${meme.id}]]  )">❌</button>
             </div>
     </section>
-    <script>
+   <script>
 
-        async function deleteMeme(id) {
-            // console.log('Quieres borrar el meme con id=', id)
+        async function deleteMeme(id){
+            //console.log('Quieres borarr el meme con id=',id)
             await fetch('/memes/'+id, {method: 'DELETE'})
 
             console.log('Meme borrado')
-            window.location.replace('/memes')   //no es SPA
+            window.location.replace('/memes')
         }
-    </script>
+   </script>
 </body>
 </html>

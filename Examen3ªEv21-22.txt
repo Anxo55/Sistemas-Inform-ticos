@@ -42,7 +42,7 @@ done
 Guarda el código en un archivo con extensión .sh, por ejemplo programa.sh, y luego puedes ejecutarlo en una terminal de Linux usando el siguiente comando:
 
 (bash programa.sh)
-
+o
 El programa te pedirá que introduzcas un valor numérico. Si es negativo, creará la carpeta "datos" (si no existe) y el archivo "examen.txt" dentro de esa carpeta, con el valor numérico dividido por 2. Si la carpeta "datos" ya existe, la borrará antes de crearla de nuevo. Si introduces 0, el programa finalizará y mostrará "FIN". Si introduces un número positivo, mostrará en pantalla todos los valores descendentes desde ese número hasta 1.
 
 Recuerda que debes tener instalado el comando bc para realizar la división con decimales. Si no lo tienes instalado, puedes instalarlo ejecutando sudo apt-get install bc en la terminal.

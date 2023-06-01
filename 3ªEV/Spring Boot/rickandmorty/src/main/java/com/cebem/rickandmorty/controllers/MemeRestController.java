@@ -11,16 +11,15 @@ import com.cebem.rickandmorty.Services.MemeService;
 public class MemeRestController {
     @Autowired
     MemeService memeService;
- //DELETE http://localhost:8080/memes/id=XXX
-    @DeleteMapping("/memes{id}") 
-    public String memesDelete(@PathVariable String id) {
+    
+    // DELETE   http://localhost:8080/memes/:id
+    @DeleteMapping("/memes/{id}")
+    public String memesDelete(@PathVariable String id){
         boolean result = memeService.deleteMeme(Long.parseLong(id));
-        if(result) {
+        if(result){
             return "OK borrado correcto";
         }else{
             return "ERROR al borrar el meme";
         }
-        
     }
-
 }
