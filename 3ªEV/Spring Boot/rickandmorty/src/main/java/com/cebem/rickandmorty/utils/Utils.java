@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Utils {
     public static boolean isPalindrome(String word){
@@ -85,4 +87,24 @@ public class Utils {
     public static int getRandomValue(int max){
         return (int) Math.floor( Math.random() * max );
     }
+
+    public static String dniletter(int dni) {
+        String juegoCaracteres = "TRWAGMYFPDXBNJZSQVHLCKE";
+        return String.valueOf(juegoCaracteres.charAt(dni % 23));
+      }
+
+      public static List<Character> checkNames(String nombre1, String nombre2) {
+        String nombre1Lower = nombre1.toLowerCase();
+        String nombre2Lower = nombre2.toLowerCase();
+      
+        List<Character> coincidencias = new ArrayList<>();
+      
+        for (char c : nombre1Lower.toCharArray()) {
+            if (nombre2Lower.contains(String.valueOf(c))) {
+                coincidencias.add(c);
+            }
+        }
+      
+        return coincidencias;
+      }
 }

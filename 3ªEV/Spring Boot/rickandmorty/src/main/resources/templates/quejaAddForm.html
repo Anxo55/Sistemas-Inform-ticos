@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{head(titulo='Añadiendo')}"></head>
+
+<body>
+    <header th:insert="~{navegacion}"></header>
+    <h1>Creación de una queja</h1>
+    <form class="form" action="/quejas" method="post">
+        <label for="description">Descripción</label>
+        <input id="description" name="description" placeholder="Descripción">
+
+        <label for="url">Url</label>
+        <input id="url" name="url" placeholder="Url de la queja">
+
+        <label for="category">Categoria</label>
+        <select id="category" name="category">
+            <option value="Seguros">Seguros</option>
+            <option value="Sociedad">Soiedad</option>
+        </select>
+
+        <label for="author">Autor</label>
+        <input id="author" name="author" placeholder="Nombre del remitente">
+
+        <button>Enviar</button>
+    </form>
+</body>
+</html>
