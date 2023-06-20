@@ -22,6 +22,7 @@ public class examenController {
         return "formulario";
     }
 
+    // http://localhost:8080/contar?nombre1=pepito&nombre2=Pepa
     @PostMapping("/contar")
     public String obtenerPalabras(@RequestParam("palabra") String palabra,
                                        @RequestParam("palabra2") String palabra2,
