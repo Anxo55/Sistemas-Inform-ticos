@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+
+        <li th:each="alumno: ${alumnos}">
+            <h1 th:text="${alumno.text}"></h1>
+            <p>Nombre</p>
+            <p th:text="${alumno.name}"></p>
+            <p>Apellido</p>
+            <p th:text="${alumno.apellido}"></p>
+            <p>Nota1</p>
+            <p th:text="${alumno.Nota1}"></p>
+            <p>Nota2</p>
+            <p th:text="${alumno.Nota2}"></p>
+            <p>Nota3</p>
+            <p th:text="${alumno.Nota3}"></p>
+           
+        </li>
+    </ul>
+    <a href="/alumnos/guardarForm">Nuevo Alumno</a>
+</body>
+</html>
